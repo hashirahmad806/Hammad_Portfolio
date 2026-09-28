@@ -1,0 +1,36 @@
+---
+import EyebrowTag from '../ui/EyebrowTag.astro';
+---
+
+<section id="manifesto" class="relative py-28 sm:py-36 px-4 sm:px-6 border-y border-white/[0.06] bg-surface-subtle/30 overflow-hidden">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <EyebrowTag text="01 // The Engineering Manifesto" variant="accent" />
+    </div>
+
+    <blockquote class="manifesto-text font-display font-semibold text-2xl sm:text-4xl md:text-5xl text-content-primary leading-[1.25] tracking-tight mb-10 transition-all duration-700">
+      "Most developer interfaces either sacrifice architectural rigor for aesthetic novelty, or drown in brutalist utility without human resonance. True engineering excellence lives where fault-tolerant distributed backends meet cinematic, 60fps micro-interactions."
+    </blockquote>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-white/[0.08]">
+      <div>
+        <span class="block font-mono text-xs uppercase tracking-wider text-accent-electric mb-2">01. Zero Jitter Policy</span>
+        <p class="text-sm text-content-secondary leading-relaxed font-light">
+          Every transition is GPU-bound on transforms and opacity. No layout thrashing, no arbitrary CSS reflows, and zero jarring frame drops.
+        </p>
+      </div>
+      <div>
+        <span class="block font-mono text-xs uppercase tracking-wider text-accent-telemetry mb-2">02. Deterministic AI</span>
+        <p class="text-sm text-content-secondary leading-relaxed font-light">
+          Autonomous agents must operate within verified state graphs, vector-grounded memory, and rigid validation boundaries—not blind prompt luck.
+        </p>
+      </div>
+      <div>
+        <span class="block font-mono text-xs uppercase tracking-wider text-accent-amber mb-2">03. Resilient Architecture</span>
+        <p class="text-sm text-content-secondary leading-relaxed font-light">
+          Designed for real-world production: graceful degradation, defensive typing, cryptographic token rotation, and sub-100ms API response budgets.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

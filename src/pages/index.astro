@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/hero/Hero.astro';
+import Manifesto from '../components/manifesto/Manifesto.astro';
+import ProjectSection from '../components/projects/ProjectSection.astro';
+import CapabilitiesMatrix from '../components/capabilities/CapabilitiesMatrix.astro';
+import LabSection from '../components/lab/LabSection.astro';
+import ExperienceTimeline from '../components/experience/ExperienceTimeline.astro';
+import AboutSection from '../components/about/AboutSection.astro';
+import ContactLounge from '../components/contact/ContactLounge.astro';
+---
+
+<BaseLayout>
+  <!-- 01. The Hero: Visual Identity, Positioning & Telemetry Dock -->
+  <Hero />
+
+  <!-- 02. Manifesto: Editorial Philosophy & Architectural Standards -->
+  <Manifesto />
+
+  <!-- 03. Selected Works: Deep Case Studies with Problem-Solution Breakdown -->
+  <ProjectSection />
+
+  <!-- 04. Capabilities Matrix: 4-Pillar Architectural Proficiencies -->
+  <CapabilitiesMatrix />
+
+  <!-- 05. Interactive Systems Lab: Real-time DAG Agent & ML Simulator -->
+  <LabSection />
+
+  <!-- 06. Trajectory: Career Milestones & Technical Track Record -->
+  <ExperienceTimeline />
+
+  <!-- 07. About: Philosophy, Standards, and Mindset -->
+  <AboutSection />
+
+  <!-- 08. Contact Lounge: Direct Email Copy & Interactive Inquiry Sender -->
+  <ContactLounge />
+</BaseLayout>

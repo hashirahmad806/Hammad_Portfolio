@@ -1,0 +1,71 @@
+---
+import { skillGroups } from '../../data/skills';
+import DoubleBezel from '../ui/DoubleBezel.astro';
+import EyebrowTag from '../ui/EyebrowTag.astro';
+---
+
+<section id="capabilities" class="py-24 sm:py-32 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+    <div>
+      <div class="mb-4">
+        <EyebrowTag text="03 // Technical Capabilities" variant="accent" />
+      </div>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl text-content-primary tracking-tight">
+        Architecture & Core Stack
+      </h2>
+    </div>
+    <p class="font-sans text-sm text-content-secondary max-w-md font-light">
+      A comprehensive map of technical proficiencies across modern frontend systems, fault-tolerant backends, and applied neural networks.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {skillGroups.map((group, groupIdx) => (
+      <div class="gsap-reveal">
+        <DoubleBezel class="h-full" innerClass="p-6 sm:p-8 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/[0.08]">
+              <div class="flex items-center gap-2.5">
+                <span class="font-mono text-xs text-accent-electric font-semibold">
+                  0{groupIdx + 1} //
+                </span>
+                <h3 class="font-display font-bold text-xl text-content-primary">
+                  {group.pillar}
+                </h3>
+              </div>
+            </div>
+
+            <p class="text-xs font-sans text-content-secondary mb-6 font-light leading-relaxed">
+              {group.subtitle}
+            </p>
+
+            <div class="space-y-6">
+              {group.skills.map((skill) => (
+                <div class="p-3.5 rounded-xl bg-surface-subtle/50 border border-white/[0.04] hover:border-white/[0.1] transition-all">
+                  <div class="flex items-center justify-between gap-2 mb-1.5">
+                    <span class="font-mono text-xs font-medium text-content-primary">
+                      {skill.name}
+                    </span>
+                    <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                      {skill.level}
+                    </span>
+                  </div>
+                  <p class="text-xs text-content-secondary font-light leading-relaxed mb-3">
+                    {skill.description}
+                  </p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {skill.tags.map((tag) => (
+                      <span class="px-2 py-0.5 rounded text-[10px] font-mono text-content-tertiary bg-white/[0.03] border border-white/[0.05]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </DoubleBezel>
+      </div>
+    ))}
+  </div>
+</section>

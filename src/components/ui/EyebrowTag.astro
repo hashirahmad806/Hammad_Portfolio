@@ -1,0 +1,25 @@
+---
+interface Props {
+  text: string;
+  variant?: 'default' | 'live' | 'accent';
+  class?: string;
+}
+
+const { text, variant = 'default', class: className = '' } = Astro.props;
+---
+
+<div class={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-mono tracking-[0.18em] uppercase border transition-all duration-300 ${
+  variant === 'live' 
+    ? 'bg-accent-telemetry/10 text-emerald-400 border-accent-telemetry/30' 
+    : variant === 'accent'
+    ? 'bg-accent-electric/10 text-indigo-400 border-accent-electric/30'
+    : 'bg-white/[0.04] text-content-secondary border-white/10'
+} ${className}`}>
+  {variant === 'live' && (
+    <span class="relative flex h-2 w-2">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+    </span>
+  )}
+  <span>{text}</span>
+</div>

@@ -1,0 +1,88 @@
+---
+import DoubleBezel from '../ui/DoubleBezel.astro';
+import EyebrowTag from '../ui/EyebrowTag.astro';
+---
+
+<section id="about" class="py-24 sm:py-32 px-4 sm:px-6 max-w-7xl mx-auto border-t border-white/[0.06]">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+    <!-- Left Column: Title & Identity -->
+    <div class="lg:col-span-5">
+      <div class="mb-4">
+        <EyebrowTag text="06 // Engineering Philosophy" variant="accent" />
+      </div>
+      <h2 class="font-display font-bold text-3xl sm:text-5xl text-content-primary tracking-tight mb-6 leading-tight">
+        Building at the intersection of systems & sensibility.
+      </h2>
+      <p class="font-sans text-sm text-content-secondary leading-relaxed font-light mb-8">
+        I believe that the best software engineers are not just coders who assemble APIs—they are digital craftspeople who comprehend the entire stack, from memory layout and database indices to typography kerning and fluid physics.
+      </p>
+
+      <div class="p-6 rounded-2xl bg-surface-subtle/50 border border-white/[0.06] space-y-4">
+        <div class="flex items-start gap-3">
+          <span class="text-accent-electric font-mono text-sm mt-0.5">01</span>
+          <div>
+            <h4 class="font-display font-semibold text-sm text-content-primary mb-1">Obsessive Polish</h4>
+            <p class="text-xs text-content-secondary font-light leading-relaxed">
+              If an interaction feels stuttered, a margin is off by 2 pixels, or a database query takes 300ms too long, it doesn't ship.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="text-accent-telemetry font-mono text-sm mt-0.5">02</span>
+          <div>
+            <h4 class="font-display font-semibold text-sm text-content-primary mb-1">Zero Dogma</h4>
+            <p class="text-xs text-content-secondary font-light leading-relaxed">
+              I pick the right tool for the job. Static Astro where speed is paramount; React islands where state demands it; Python where neural models thrive.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="text-accent-amber font-mono text-sm mt-0.5">03</span>
+          <div>
+            <h4 class="font-display font-semibold text-sm text-content-primary mb-1">Human-Centric AI</h4>
+            <p class="text-xs text-content-secondary font-light leading-relaxed">
+              Machine learning models should amplify human agency and solve tangible bottlenecks, not generate meaningless noise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Personal Narrative & Focus Areas -->
+    <div class="lg:col-span-7 space-y-6">
+      <DoubleBezel class="h-full" innerClass="p-8">
+        <div class="space-y-6 text-sm font-sans text-content-secondary leading-relaxed font-light">
+          <p>
+            My software journey started with foundational computer science: writing C++, profiling data structures, and understanding how bits traverse networks. That algorithmic grounding quickly evolved into a passion for the open web and full-stack architecture.
+          </p>
+
+          <p>
+            Over the past few years, I've designed and shipped production applications across the MERN ecosystem, architected streaming WebSocket terminals, and built diagnostic machine learning systems. More recently, my focus has converged on <span class="text-content-primary font-medium">autonomous AI agents</span>—exploring how LLMs can reliably coordinate complex engineering workflows using DAG state machines and vector search.
+          </p>
+
+          <p>
+            When I'm not writing TypeScript or training neural networks, you'll find me analyzing design systems on Awwwards, contributing to open-source tooling, or deconstructing high-performance graphics engines.
+          </p>
+        </div>
+
+        <!-- Quick Stats Matrix -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-white/[0.08]">
+          <div>
+            <span class="block font-mono text-2xl font-bold text-content-primary">4+</span>
+            <span class="text-[11px] font-mono text-content-tertiary uppercase tracking-wider">Years Coding</span>
+          </div>
+          <div>
+            <span class="block font-mono text-2xl font-bold text-accent-electric">100%</span>
+            <span class="text-[11px] font-mono text-content-tertiary uppercase tracking-wider">TypeScript Strict</span>
+          </div>
+          <div>
+            <span class="block font-mono text-2xl font-bold text-emerald-400">98+</span>
+            <span class="text-[11px] font-mono text-content-tertiary uppercase tracking-wider">Avg Lighthouse</span>
+          </div>
+        </div>
+      </DoubleBezel>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  withArrow?: boolean;
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+
+const {
+  href,
+  variant = 'primary',
+  withArrow = true,
+  class: className = '',
+  target,
+  rel,
+} = Astro.props;
+
+const Element = href ? 'a' : 'button';
+
+const baseStyles = 'group relative inline-flex items-center justify-between gap-4 font-mono text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 rounded-full active:scale-[0.98] select-none';
+
+const variantStyles = {
+  primary: 'pl-6 pr-2 py-2 bg-content-primary text-void hover:bg-white shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(99,102,241,0.3)]',
+  secondary: 'pl-6 pr-2 py-2 bg-surface-subtle text-content-primary border border-white/10 hover:border-white/25 hover:bg-surface-elevated',
+  ghost: 'px-5 py-2.5 text-content-secondary hover:text-content-primary hover:bg-white/[0.05]',
+};
+---
+
+<Element
+  href={href}
+  target={target}
+  rel={rel}
+  class={`${baseStyles} ${variantStyles[variant]} ${className}`}
+>
+  <span class="py-1">
+    <slot />
+  </span>
+
+  {withArrow && (
+    <span class={`btn-nested-icon ${variant === 'primary' ? 'bg-void/10 text-void group-hover:bg-void/20' : 'bg-white/10 text-white group-hover:bg-white/20'}`}>
+      <svg
+        class="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2.5"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+      </svg>
+    </span>
+  )}
+</Element>

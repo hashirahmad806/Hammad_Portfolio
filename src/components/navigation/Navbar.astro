@@ -1,0 +1,122 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 px-4 pt-4 sm:pt-6 pointer-events-none">
+  <div class="max-w-4xl mx-auto flex items-center justify-between pointer-events-auto">
+    <!-- Brand Pill -->
+    <a
+      href="#hero"
+      class="glass-dock px-4 py-2 rounded-full flex items-center gap-2.5 group transition-all duration-300 hover:border-white/20"
+      aria-label="Return to top"
+    >
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-telemetry opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-telemetry"></span>
+      </span>
+      <span class="font-display font-bold text-sm tracking-tight text-content-primary group-hover:text-white">
+        hammad<span class="text-accent-electric">.dev</span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation Dock -->
+    <nav class="hidden md:flex glass-dock px-3 py-1.5 rounded-full items-center gap-1 border border-white/10" aria-label="Main Navigation">
+      <a href="#projects" class="px-3.5 py-1.5 text-xs font-mono text-content-secondary hover:text-white rounded-full hover:bg-white/[0.06] transition-all">
+        // Works
+      </a>
+      <a href="#capabilities" class="px-3.5 py-1.5 text-xs font-mono text-content-secondary hover:text-white rounded-full hover:bg-white/[0.06] transition-all">
+        // Stack
+      </a>
+      <a href="#lab" class="px-3.5 py-1.5 text-xs font-mono text-content-secondary hover:text-white rounded-full hover:bg-white/[0.06] transition-all">
+        // Lab
+      </a>
+      <a href="#experience" class="px-3.5 py-1.5 text-xs font-mono text-content-secondary hover:text-white rounded-full hover:bg-white/[0.06] transition-all">
+        // Trajectory
+      </a>
+      <a href="#about" class="px-3.5 py-1.5 text-xs font-mono text-content-secondary hover:text-white rounded-full hover:bg-white/[0.06] transition-all">
+        // About
+      </a>
+    </nav>
+
+    <!-- Connect Action -->
+    <div class="flex items-center gap-2">
+      <a
+        href="#contact"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dock text-xs font-mono uppercase tracking-wider text-content-primary border border-white/10 hover:border-accent-electric/40 hover:bg-white/[0.08] transition-all duration-300"
+      >
+        <span>Connect</span>
+        <span class="text-accent-electric">↗</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button
+        id="mobile-nav-toggle"
+        class="md:hidden glass-dock p-2.5 rounded-full text-content-primary focus:outline-none focus:ring-1 focus:ring-accent-electric"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path id="hamburger-icon-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16" />
+          <path id="hamburger-icon-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+          <path id="hamburger-icon-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Overlay -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-void/95 backdrop-blur-2xl z-40 hidden flex-col justify-center px-8 transition-all duration-300 pointer-events-auto"
+  >
+    <div class="flex flex-col gap-6 text-2xl font-display font-semibold">
+      <a href="#projects" class="mobile-link text-content-primary hover:text-accent-electric transition-colors">
+        01. Selected Works
+      </a>
+      <a href="#capabilities" class="mobile-link text-content-primary hover:text-accent-electric transition-colors">
+        02. Capabilities & Stack
+      </a>
+      <a href="#lab" class="mobile-link text-content-primary hover:text-accent-electric transition-colors">
+        03. Interactive Lab
+      </a>
+      <a href="#experience" class="mobile-link text-content-primary hover:text-accent-electric transition-colors">
+        04. Professional Trajectory
+      </a>
+      <a href="#about" class="mobile-link text-content-primary hover:text-accent-electric transition-colors">
+        05. Behind The Code
+      </a>
+      <a href="#contact" class="mobile-link text-accent-electric hover:underline transition-all">
+        06. Get in Touch ↗
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', String(!isExpanded));
+      
+      if (isExpanded) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      } else {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+      }
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

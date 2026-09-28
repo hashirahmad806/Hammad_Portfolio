@@ -1,0 +1,70 @@
+---
+import Navbar from '../components/navigation/Navbar.astro';
+import Footer from '../components/footer/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Hammad — Full-Stack Craftsman & AI/ML Engineer',
+  description = 'Portfolio of Hammad: Senior Full-Stack Software Engineer & AI/ML practitioner crafting high-performance MERN web platforms, real-time telemetry systems, and autonomous agent workflows.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#090A0F" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+  <body class="bg-void text-content-primary selection:bg-accent-electric/30 selection:text-white">
+    <!-- GPU-safe Fixed Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Floating Navigation Bar -->
+    <Navbar />
+
+    <!-- Main Content Stream -->
+    <main id="main-content" class="relative z-10">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+
+    <!-- Initialize Lenis & GSAP Motion System -->
+    <script>
+      import { setupMotionSystem } from '../scripts/lenis-orchestrator';
+      
+      // Initialize on DOMContentLoaded or immediate load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setupMotionSystem();
+        });
+      } else {
+        setupMotionSystem();
+      }
+    </script>
+  </body>
+</html>

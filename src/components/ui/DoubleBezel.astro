@@ -1,0 +1,15 @@
+---
+interface Props {
+  class?: string;
+  innerClass?: string;
+  glowOnHover?: boolean;
+}
+
+const { class: className = '', innerClass = '', glowOnHover = true } = Astro.props;
+---
+
+<div class={`double-bezel ${glowOnHover ? 'hover:border-accent-electric/30' : ''} ${className}`}>
+  <div class={`double-bezel-inner p-6 sm:p-8 ${innerClass}`}>
+    <slot />
+  </div>
+</div>

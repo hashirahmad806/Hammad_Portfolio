@@ -1,0 +1,75 @@
+---
+import EyebrowTag from '../ui/EyebrowTag.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section id="hero" class="relative min-h-[100dvh] flex flex-col justify-center items-center pt-28 pb-16 px-4 sm:px-6 overflow-hidden">
+  <!-- Atmospheric background radial gradients (Subtle, purposeful) -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-accent-electric/15 to-accent-cyan/10 blur-[140px] pointer-events-none rounded-full"></div>
+  <div class="absolute bottom-10 right-10 w-[300px] h-[250px] bg-accent-amber/5 blur-[120px] pointer-events-none rounded-full"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+    <!-- Live Telemetry Pill -->
+    <div class="mb-6 animate-fade-in">
+      <EyebrowTag text="Available for Q2/Q3 Engineering Roles" variant="live" />
+    </div>
+
+    <!-- Editorial Identity Headline -->
+    <h1 class="font-display font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight text-content-primary mb-6 leading-[1.08] max-w-4xl">
+      Engineering digital <span class="text-transparent bg-clip-text bg-gradient-to-r from-content-primary via-slate-200 to-accent-electric">systems</span> with precision & taste.
+    </h1>
+
+    <!-- Core Positioning Statement -->
+    <p class="font-sans text-base sm:text-lg md:text-xl text-content-secondary max-w-2xl mb-10 leading-relaxed font-light">
+      I'm <span class="text-content-primary font-medium">Hammad</span> — a Full-Stack Software Engineer & AI/ML Practitioner. I architect high-throughput web applications, reactive MERN platforms, and autonomous agentic workflows where mathematical rigor meets fluid interface craft.
+    </p>
+
+    <!-- Action Dock (Button-in-Button) -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+      <Button href="#projects" variant="primary">
+        Explore Selected Works
+      </Button>
+      <Button href="#contact" variant="secondary">
+        Direct Inquiry
+      </Button>
+    </div>
+
+    <!-- Real-Time Engineering Telemetry Dock (Double-Bezel Architecture) -->
+    <div class="w-full max-w-3xl double-bezel">
+      <div class="double-bezel-inner p-4 sm:p-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
+        <div class="pt-2 sm:pt-0 sm:px-4">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-content-tertiary mb-1">Architecture</span>
+          <span class="font-display font-semibold text-lg text-content-primary">MERN + Astro</span>
+          <span class="block text-[11px] font-mono text-emerald-400 mt-0.5">Zero-JS Default</span>
+        </div>
+        <div class="pt-2 sm:pt-0 sm:px-4">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-content-tertiary mb-1">Inference</span>
+          <span class="font-display font-semibold text-lg text-content-primary">Sub-80ms</span>
+          <span class="block text-[11px] font-mono text-indigo-400 mt-0.5">PyTorch & LLMs</span>
+        </div>
+        <div class="pt-2 sm:pt-0 sm:px-4">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-content-tertiary mb-1">Performance</span>
+          <span class="font-display font-semibold text-lg text-content-primary">99 / 100</span>
+          <span class="block text-[11px] font-mono text-amber-400 mt-0.5">Lighthouse Score</span>
+        </div>
+        <div class="pt-2 sm:pt-0 sm:px-4">
+          <span class="block text-[10px] font-mono uppercase tracking-[0.2em] text-content-tertiary mb-1">Location</span>
+          <span class="font-display font-semibold text-lg text-content-primary">UTC +5</span>
+          <span class="block text-[11px] font-mono text-content-secondary mt-0.5">Global Remote</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <a
+    href="#manifesto"
+    class="absolute bottom-6 left-1/2 -translate-x-1/2 text-content-tertiary hover:text-content-primary transition-colors flex flex-col items-center gap-1.5"
+    aria-label="Scroll to manifesto"
+  >
+    <span class="text-[10px] font-mono uppercase tracking-[0.2em]">Scroll</span>
+    <span class="w-1 h-4 rounded-full bg-white/20 relative overflow-hidden">
+      <span class="absolute top-0 left-0 w-full h-1/2 bg-accent-electric rounded-full animate-bounce"></span>
+    </span>
+  </a>
+</section>
